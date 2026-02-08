@@ -26,8 +26,7 @@ const Footer = () => {
         Resources: [
             { name: 'Experience', href: '#experience' },
             { name: 'Contact', href: '#contact' },
-            { name: 'Resume', href: '/resume.pdf' },
-            { name: 'Blog', href: '#' },
+            { name: 'Resume', href: '/src/assets/resume/Om_Mistri_Resume.pdf' },
         ],
     };
 
@@ -41,7 +40,7 @@ const Footer = () => {
                         <div>
                             <h3 className="text-2xl font-bold gradient-text mb-4">Om Mistri</h3>
                             <p className="text-foreground/70 mb-6">
-                                Full Stack Software Engineer passionate about building exceptional digital experiences.
+                                Software Engineer specializing in full-stack development with MERN, Spring Boot, and AWS.
                             </p>
                             <div className="flex gap-3">
                                 <div className="w-2 h-2 rounded-full bg-primary animate-glow"></div>
@@ -77,7 +76,7 @@ const Footer = () => {
                                 © {new Date().getFullYear()} Om Mistri. All rights reserved.
                             </p>
                             <p className="text-foreground/60 text-sm flex items-center gap-2">
-                                Built with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using React & Tailwind CSS
+                                Crafted with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> and dedication to excellence
                             </p>
                         </div>
                     </div>

@@ -3,64 +3,34 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
     const projects = [
         {
-            title: 'E-Commerce Platform',
+            title: 'Jansho\'s Mart',
             description:
-                'Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with React, Node.js, and MongoDB.',
-            tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Express'],
+                'Full-featured eCommerce platform with user and admin roles using the MERN stack. Built secure RESTful APIs for user authentication (JWT), product management, and order processing with a responsive frontend.',
+            tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Tailwind CSS'],
             image: '/project1.jpg',
-            github: 'https://github.com',
-            live: 'https://example.com',
+            github: 'https://github.com/ommistry2914',
+            live: '#',
             featured: true,
         },
         {
-            title: 'AI-Powered Chat Application',
+            title: 'PG-Dissertation System',
             description:
-                'Real-time chat application with AI-powered message suggestions and sentiment analysis. Integrated OpenAI API for intelligent responses.',
-            tags: ['React', 'Socket.io', 'OpenAI', 'PostgreSQL', 'Redis'],
+                'Full-stack web application for managing postgraduate dissertations using Spring Boot and React.js. Built RESTful APIs to handle dissertation proposals, file uploads, task assignments, and review tracking with role-based access control.',
+            tags: ['Spring Boot', 'MongoDB', 'React', 'Bootstrap', 'Ant Design'],
             image: '/project2.jpg',
-            github: 'https://github.com',
-            live: 'https://example.com',
+            github: 'https://github.com/ommistry2914',
+            live: '#',
             featured: true,
         },
         {
-            title: 'Task Management System',
+            title: 'Intelligent Fogponic System',
             description:
-                'Collaborative project management tool with real-time updates, team collaboration features, and analytics dashboard.',
-            tags: ['Next.js', 'Spring Boot', 'MySQL', 'WebSocket'],
+                'ML-based system to predict optimal light interval, fan interval, NPK values, and plant health in fogponics-based systems. Designed an interactive dashboard using Streamlit for real-time monitoring and parameter adjustment.',
+            tags: ['Python', 'Scikit-learn', 'Streamlit', 'Pandas', 'NumPy', 'Matplotlib'],
             image: '/project3.jpg',
-            github: 'https://github.com',
-            live: 'https://example.com',
-            featured: false,
-        },
-        {
-            title: 'Portfolio CMS',
-            description:
-                'Headless CMS for portfolio websites with drag-and-drop builder, SEO optimization, and analytics integration.',
-            tags: ['React', 'Node.js', 'MongoDB', 'AWS S3'],
-            image: '/project4.jpg',
-            github: 'https://github.com',
-            live: 'https://example.com',
-            featured: false,
-        },
-        {
-            title: 'Weather Forecast App',
-            description:
-                'Beautiful weather application with location-based forecasts, interactive maps, and weather alerts using external APIs.',
-            tags: ['React', 'TypeScript', 'OpenWeather API', 'Mapbox'],
-            image: '/project5.jpg',
-            github: 'https://github.com',
-            live: 'https://example.com',
-            featured: false,
-        },
-        {
-            title: 'Social Media Dashboard',
-            description:
-                'Analytics dashboard for social media management with data visualization, scheduling, and multi-platform integration.',
-            tags: ['Vue.js', 'Python', 'FastAPI', 'PostgreSQL'],
-            image: '/project6.jpg',
-            github: 'https://github.com',
-            live: 'https://example.com',
-            featured: false,
+            github: 'https://github.com/ommistry2914',
+            live: '#',
+            featured: true,
         },
     ];
 
@@ -146,7 +116,7 @@ const Projects = () => {
                     {/* View More Button */}
                     <div className="text-center mt-12">
                         <a
-                            href="https://github.com"
+                            href="https://github.com/ommistry2914"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-8 py-4 glass rounded-lg font-semibold hover:scale-105 transition-all hover:shadow-xl"

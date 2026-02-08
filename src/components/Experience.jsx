@@ -9,104 +9,122 @@ const Experience = () => {
 
     const experiences = [
         {
-            role: 'Full Stack Developer',
-            company: 'Tech Innovations Inc.',
+            role: 'Software Engineer',
+            company: 'Alois Solutions',
             type: 'Full-time',
-            period: 'Jan 2024 - Present',
-            duration: '1+ year',
+            period: 'June 2025 - Present',
+            duration: '6+ months',
             location: 'Remote',
             description:
-                'Developing and maintaining full-stack web applications using React, Node.js, and PostgreSQL. Collaborated with cross-functional teams to deliver high-quality software solutions.',
+                'Contributing to a fintech web application with secure authentication, transaction workflows, and user management. Implementing CI/CD pipelines and deploying infrastructure on AWS.',
             achievements: [
-                'Built and deployed 5+ production-ready features',
-                'Improved application performance by 40%',
-                'Mentored junior developers on best practices',
+                'Implemented CI/CD pipelines using GitHub Actions and Docker',
+                'Deployed project infrastructure on AWS using EC2 and S3',
+                'Integrated AI-powered chatbot using FastAPI for strategy recommendations',
             ],
-            technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Docker'],
+            technologies: ['React', 'Node.js', 'FastAPI', 'AWS', 'Docker', 'GitHub Actions'],
             gradient: 'from-blue-500 to-cyan-500',
             icon: TrendingUp,
-            side: 'left', // First on LEFT
+            side: 'left',
         },
         {
-            role: 'Software Engineer Intern',
-            company: 'Digital Solutions Ltd.',
+            role: 'Software Developer Intern',
+            company: 'Alois Solutions',
             type: 'Internship',
-            period: 'Jun 2023 - Dec 2023',
+            period: 'Jan 2025 - June 2025',
             duration: '6 months',
-            location: 'Hybrid',
-            description:
-                'Contributed to the development of enterprise-level applications. Worked on both frontend and backend components, implementing new features and fixing bugs.',
-            achievements: [
-                'Developed RESTful APIs serving 10K+ daily requests',
-                'Implemented responsive UI components',
-                'Reduced bug count by 30% through comprehensive testing',
-            ],
-            technologies: ['Java', 'Spring Boot', 'React', 'MySQL', 'Git'],
-            gradient: 'from-purple-500 to-pink-500',
-            icon: Award,
-            side: 'right', // Second on RIGHT
-        },
-        {
-            role: 'Freelance Developer',
-            company: 'Self-Employed',
-            type: 'Freelance',
-            period: 'Jan 2023 - Present',
-            duration: '2+ years',
             location: 'Remote',
             description:
-                'Delivered custom web solutions for various clients including e-commerce platforms, business websites, and web applications. Managed projects from conception to deployment.',
+                'Contributed to the development of full-stack web applications for exam, survey, and school management systems using the MERN stack. Implemented secure role-based and feature-based access control.',
             achievements: [
-                'Successfully completed 10+ client projects',
-                'Maintained 100% client satisfaction rate',
-                'Built long-term relationships with repeat clients',
+                'Built scalable modules for online coding and SQL exams with security features',
+                'Developed school management system supporting multiple schools and students',
+                'Ensured robust data management using PostgreSQL and MongoDB',
             ],
-            technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind'],
+            technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL'],
+            gradient: 'from-purple-500 to-pink-500',
+            icon: Award,
+            side: 'right',
+        },
+        {
+            role: 'Web Developer',
+            company: 'FootPrint\'s 24, MSU',
+            type: 'Volunteer',
+            period: 'Dec 2023 - Dec 2024',
+            duration: '1 year',
+            location: 'Vadodara, India',
+            description:
+                'Contributed to the development of the official website for FootPrint\'s 24 event at MSU. Demonstrated collaborative and project management skills while working with the event organizing team.',
+            achievements: [
+                'Developed official event website for university fest',
+                'Collaborated with event organizing team for requirements',
+                'Managed project timeline and deliverables effectively',
+            ],
+            technologies: ['React', 'JavaScript', 'CSS', 'HTML'],
             gradient: 'from-emerald-500 to-teal-500',
             icon: Users,
-            side: 'left', // Third on LEFT
+            side: 'left',
         },
     ];
 
     useEffect(() => {
+        let rafId = null;
+        let isScrolling = false;
+
         const handleScroll = () => {
-            if (!sectionRef.current || !timelineRef.current) return;
+            if (!isScrolling) {
+                isScrolling = true;
 
-            const section = sectionRef.current;
-            const timeline = timelineRef.current;
-            const sectionRect = section.getBoundingClientRect();
+                rafId = requestAnimationFrame(() => {
+                    if (!sectionRef.current || !timelineRef.current) {
+                        isScrolling = false;
+                        return;
+                    }
 
-            const sectionTop = sectionRect.top;
-            const sectionHeight = sectionRect.height;
-            const windowHeight = window.innerHeight;
+                    const section = sectionRef.current;
+                    const timeline = timelineRef.current;
+                    const sectionRect = section.getBoundingClientRect();
 
-            // Progress from 0 to 1 as section scrolls through viewport
-            const progress = Math.max(0, Math.min(1,
-                (windowHeight - sectionTop) / (sectionHeight + windowHeight)
-            ));
+                    const sectionTop = sectionRect.top;
+                    const sectionHeight = sectionRect.height;
+                    const windowHeight = window.innerHeight;
 
-            setScrollProgress(progress);
+                    // Progress from 0 to 1 as section scrolls through viewport
+                    const progress = Math.max(0, Math.min(1,
+                        (windowHeight - sectionTop) / (sectionHeight + windowHeight)
+                    ));
 
-            // Check which items are visible
-            const items = section.querySelectorAll('[data-experience-item]');
-            const newVisibleItems = [];
+                    setScrollProgress(progress);
 
-            items.forEach((item, index) => {
-                const rect = item.getBoundingClientRect();
-                const itemMiddle = rect.top + rect.height / 2;
+                    // Check which items are visible
+                    const items = section.querySelectorAll('[data-experience-item]');
+                    const newVisibleItems = [];
 
-                // Item is visible when its middle is in viewport
-                if (itemMiddle < windowHeight && itemMiddle > 0) {
-                    newVisibleItems.push(index);
-                }
-            });
+                    items.forEach((item, index) => {
+                        const rect = item.getBoundingClientRect();
+                        const itemMiddle = rect.top + rect.height / 2;
 
-            setVisibleItems(newVisibleItems);
+                        // Item is visible when its middle is in viewport
+                        if (itemMiddle < windowHeight && itemMiddle > 0) {
+                            newVisibleItems.push(index);
+                        }
+                    });
+
+                    setVisibleItems(newVisibleItems);
+                    isScrolling = false;
+                });
+            }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll(); // Initial check
 
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+            }
+        };
     }, []);
 
     return (
@@ -138,32 +156,37 @@ const Experience = () => {
                     {/* Modern Tree Timeline */}
                     <div className="relative" ref={timelineRef}>
                         {/* MAIN VERTICAL LINE - The Central Trunk (CENTERED) */}
-                        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 hidden lg:block overflow-hidden">
-                            {/* Background line */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-secondary/20 to-accent/20"></div>
-
-                            {/* Animated fill line that grows with scroll - THE CONNECTED LIGHT */}
-                            <div
-                                className="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary via-secondary to-accent transition-all duration-300 ease-out"
+                        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 hidden lg:block overflow-visible">
+                            {/* Background line with subtle glow */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-secondary/20 to-accent/20 rounded-full"
                                 style={{
-                                    height: `${scrollProgress * 100}%`,
-                                    boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4)'
+                                    boxShadow: '0 0 10px rgba(59, 130, 246, 0.2)'
                                 }}
                             ></div>
 
-                            {/* Glowing traveling dot at the end of the line */}
+                            {/* Animated fill line that grows with scroll - THE CONNECTED LIGHT */}
                             <div
-                                className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary transition-all duration-300"
+                                className="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary via-secondary to-accent transition-all duration-500 ease-out rounded-full"
                                 style={{
-                                    top: `${scrollProgress * 100}%`,
-                                    opacity: scrollProgress > 0.05 ? 1 : 0,
-                                    transform: `translate(-50%, -50%) scale(${scrollProgress > 0.05 ? 1 : 0})`,
-                                    boxShadow: '0 0 20px rgba(59, 130, 246, 1), 0 0 40px rgba(59, 130, 246, 0.6)'
+                                    height: `${scrollProgress * 100}%`,
+                                    boxShadow: `
+                                        0 0 20px rgba(59, 130, 246, ${0.6 + scrollProgress * 0.4}),
+                                        0 0 40px rgba(59, 130, 246, ${0.4 + scrollProgress * 0.4}),
+                                        0 0 60px rgba(59, 130, 246, ${0.2 + scrollProgress * 0.3}),
+                                        0 0 80px rgba(139, 92, 246, ${0.1 + scrollProgress * 0.2})
+                                    `,
+                                    filter: `brightness(${1 + scrollProgress * 0.3})`
                                 }}
                             >
-                                <div className="absolute inset-0 rounded-full bg-primary animate-ping"></div>
-                                <div className="absolute inset-0 rounded-full bg-white/50"></div>
+                                {/* Inner glow layer */}
+                                <div
+                                    className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-transparent rounded-full"
+                                    style={{
+                                        opacity: scrollProgress * 0.5
+                                    }}
+                                ></div>
                             </div>
+
                         </div>
 
                         {/* Experience Items */}
@@ -273,28 +296,38 @@ const Experience = () => {
                                         <div className="relative z-20 pt-8">
                                             {/* Node on main vertical line */}
                                             <div
-                                                className={`relative w-6 h-6 rounded-full bg-gradient-to-br ${exp.gradient} border-4 border-background shadow-xl transition-all duration-700 ${visibleItems.includes(index)
+                                                className={`relative w-6 h-6 rounded-full bg-gradient-to-br ${exp.gradient} border-4 border-background shadow-xl transition-all duration-700 ease-out ${visibleItems.includes(index)
                                                     ? 'scale-100 opacity-100'
                                                     : 'scale-0 opacity-0'
                                                     }`}
                                                 style={{
                                                     boxShadow: visibleItems.includes(index)
-                                                        ? `0 0 20px ${exp.gradient.includes('blue') ? 'rgba(59, 130, 246, 0.8)' : exp.gradient.includes('purple') ? 'rgba(168, 85, 247, 0.8)' : 'rgba(16, 185, 129, 0.8)'}`
-                                                        : 'none'
+                                                        ? `
+                                                            0 0 20px ${exp.gradient.includes('blue') ? 'rgba(59, 130, 246, 1)' : exp.gradient.includes('purple') ? 'rgba(168, 85, 247, 1)' : 'rgba(16, 185, 129, 1)'},
+                                                            0 0 40px ${exp.gradient.includes('blue') ? 'rgba(59, 130, 246, 0.6)' : exp.gradient.includes('purple') ? 'rgba(168, 85, 247, 0.6)' : 'rgba(16, 185, 129, 0.6)'},
+                                                            0 0 60px ${exp.gradient.includes('blue') ? 'rgba(59, 130, 246, 0.3)' : exp.gradient.includes('purple') ? 'rgba(168, 85, 247, 0.3)' : 'rgba(16, 185, 129, 0.3)'}
+                                                        `
+                                                        : 'none',
+                                                    filter: visibleItems.includes(index) ? 'brightness(1.3)' : 'brightness(1)'
                                                 }}
                                             >
-                                                <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${exp.gradient} ${visibleItems.includes(index) ? 'animate-ping' : ''}`}></div>
+                                                <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${exp.gradient} ${visibleItems.includes(index) ? 'animate-ping' : ''}`} style={{ animationDuration: '2s' }}></div>
                                             </div>
 
                                             {/* HORIZONTAL BRANCH LINE */}
                                             <div
-                                                className={`absolute top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r ${exp.gradient} transition-all duration-700 ${exp.side === 'right' ? 'left-full origin-left' : 'right-full origin-right'
+                                                className={`absolute top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r ${exp.gradient} transition-all duration-700 ease-out rounded-full ${exp.side === 'right' ? 'left-full origin-left' : 'right-full origin-right'
                                                     }`}
                                                 style={{
                                                     width: visibleItems.includes(index) ? '60px' : '0px',
                                                     boxShadow: visibleItems.includes(index)
-                                                        ? `0 0 10px ${exp.gradient.includes('blue') ? 'rgba(59, 130, 246, 0.6)' : exp.gradient.includes('purple') ? 'rgba(168, 85, 247, 0.6)' : 'rgba(16, 185, 129, 0.6)'}`
-                                                        : 'none'
+                                                        ? `
+                                                            0 0 15px ${exp.gradient.includes('blue') ? 'rgba(59, 130, 246, 0.8)' : exp.gradient.includes('purple') ? 'rgba(168, 85, 247, 0.8)' : 'rgba(16, 185, 129, 0.8)'},
+                                                            0 0 30px ${exp.gradient.includes('blue') ? 'rgba(59, 130, 246, 0.5)' : exp.gradient.includes('purple') ? 'rgba(168, 85, 247, 0.5)' : 'rgba(16, 185, 129, 0.5)'},
+                                                            0 0 45px ${exp.gradient.includes('blue') ? 'rgba(59, 130, 246, 0.3)' : exp.gradient.includes('purple') ? 'rgba(168, 85, 247, 0.3)' : 'rgba(16, 185, 129, 0.3)'}
+                                                        `
+                                                        : 'none',
+                                                    filter: visibleItems.includes(index) ? 'brightness(1.2)' : 'brightness(1)'
                                                 }}
                                             ></div>
                                         </div>
@@ -478,8 +511,8 @@ const Experience = () => {
                                         Get In Touch
                                     </a>
                                     <a
-                                        href="/resume.pdf"
-                                        download
+                                        href="/src/assets/resume/Om_Mistri_Resume.pdf"
+                                        download="Om_Mistri_Resume.pdf"
                                         className="px-8 py-4 glass rounded-xl font-semibold hover:scale-105 transition-all"
                                     >
                                         Download Resume

@@ -34,27 +34,26 @@ const Contact = () => {
         {
             icon: Mail,
             label: 'Email',
-            value: 'om.mistry@example.com',
-            href: 'mailto:om.mistry@example.com',
+            value: 'ommistry2914@gmail.com',
+            href: 'mailto:ommistry2914@gmail.com',
         },
         {
             icon: Phone,
             label: 'Phone',
-            value: '+91 98765 43210',
-            href: 'tel:+919876543210',
+            value: '+91 7046764495',
+            href: 'tel:+917046764495',
         },
         {
             icon: MapPin,
             label: 'Location',
-            value: 'Mumbai, India',
+            value: 'Vadodara, India',
             href: null,
         },
     ];
 
     const socialLinks = [
-        { icon: Github, label: 'GitHub', href: 'https://github.com', color: 'hover:text-primary' },
-        { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com', color: 'hover:text-secondary' },
-        { icon: Twitter, label: 'Twitter', href: 'https://twitter.com', color: 'hover:text-accent' },
+        { icon: Github, label: 'GitHub', href: 'https://github.com/ommistry2914', color: 'hover:text-primary' },
+        { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/om-mistri', color: 'hover:text-secondary' },
     ];
 
     return (

@@ -24,15 +24,16 @@ const Hero = () => {
                     </h1>
 
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground/90 mb-6 animate-slide-up delay-200">
-                        Full Stack Software Engineer
+                        Software Engineer
                     </h2>
 
                     {/* Description */}
                     <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up delay-300">
-                        Building scalable web applications with modern technologies. Specialized in{' '}
-                        <span className="text-primary font-semibold">Backend</span> and{' '}
-                        <span className="text-secondary font-semibold">Frontend</span> development with 1 year of industry
-                        experience and multiple successful projects.
+                        Crafting scalable full-stack applications with expertise in{' '}
+                        <span className="text-primary font-semibold">MERN stack</span>,{' '}
+                        <span className="text-secondary font-semibold">Spring Boot</span>, and{' '}
+                        <span className="text-accent font-semibold">cloud technologies</span>. Passionate about solving complex problems
+                        and building robust solutions with clean, efficient code.
                     </p>
 
                     {/* CTA Buttons */}

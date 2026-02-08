@@ -4,23 +4,23 @@ const About = () => {
     const highlights = [
         {
             icon: Code2,
-            title: '1+ Year Experience',
-            description: 'Professional software development in industry',
+            title: 'Software Engineer',
+            description: 'Currently at Alois Solutions building fintech apps',
         },
         {
             icon: Rocket,
-            title: 'Multiple Projects',
-            description: 'Built and deployed real-world applications',
+            title: '500+ Problems Solved',
+            description: 'Active on LeetCode and GeeksforGeeks',
         },
         {
             icon: Users,
-            title: 'Freelance Success',
-            description: 'Delivered projects for satisfied clients',
+            title: 'Full Stack Developer',
+            description: 'MERN, Spring Boot, AWS & DevOps expertise',
         },
         {
             icon: Award,
-            title: 'AI/ML Knowledge',
-            description: 'Experience with modern AI implementations',
+            title: 'AWS Certified',
+            description: 'Cloud Computing Workshop from MSU',
         },
     ];
 
@@ -43,21 +43,20 @@ const About = () => {
                         {/* Left: Description */}
                         <div className="space-y-6">
                             <p className="text-foreground/80 text-lg leading-relaxed">
-                                I'm a <span className="text-primary font-semibold">Full Stack Software Engineer</span> with a passion
-                                for building scalable, user-centric applications. With expertise in both{' '}
-                                <span className="text-secondary font-semibold">backend</span> and{' '}
-                                <span className="text-accent font-semibold">frontend</span> technologies, I bring ideas to life
-                                through clean, efficient code.
+                                I'm a <span className="text-primary font-semibold">Software Engineer</span> with a passion for
+                                building <span className="text-secondary font-semibold">scalable, user-centric applications</span> that
+                                solve real-world problems. I specialize in full-stack development, bringing ideas to life through
+                                clean, efficient code and modern development practices.
                             </p>
                             <p className="text-foreground/80 text-lg leading-relaxed">
-                                My journey includes working with cutting-edge technologies like{' '}
-                                <strong>React.js, Node.js, Spring Boot, and modern databases</strong>. I've successfully delivered
-                                freelance projects and built personal digital products that solve real-world problems.
+                                My tech stack includes <strong>React.js, Next.js, Node.js, Express.js, Spring Boot, FastAPI</strong>,
+                                and databases like <strong>MongoDB, PostgreSQL, and MySQL</strong>. I've implemented role-based access control,
+                                RESTful APIs, real-time features, and deployed applications on <strong>AWS (EC2, S3, CloudFront)</strong>.
                             </p>
                             <p className="text-foreground/80 text-lg leading-relaxed">
-                                Beyond traditional development, I have hands-on experience with{' '}
-                                <strong>AI/ML concepts and implementations</strong>, allowing me to integrate intelligent features
-                                into modern applications.
+                                I'm also a competitive programmer with <strong>500+ problems solved</strong> on LeetCode and GeeksforGeeks.
+                                Additionally, I have experience with <strong>Machine Learning</strong>, having developed ML models for
+                                predictive systems using Python, Scikit-learn, and Streamlit.
                             </p>
                             <div className="flex gap-4 pt-4">
                                 <a
@@ -67,8 +66,8 @@ const About = () => {
                                     Hire Me
                                 </a>
                                 <a
-                                    href="/resume.pdf"
-                                    download
+                                    href="/src/assets/resume/Om_Mistri_Resume.pdf"
+                                    download="Om_Mistri_Resume.pdf"
                                     className="px-6 py-3 glass rounded-lg font-semibold hover:scale-105 transition-all"
                                 >
                                     Download CV
@@ -96,10 +95,10 @@ const About = () => {
                     {/* Stats */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {[
-                            { number: '10+', label: 'Projects Completed' },
-                            { number: '5+', label: 'Happy Clients' },
-                            { number: '8+', label: 'Technologies' },
-                            { number: '1+', label: 'Years Experience' },
+                            { number: '3+', label: 'Major Projects' },
+                            { number: '500+', label: 'Problems Solved' },
+                            { number: '10+', label: 'Technologies' },
+                            { number: '1.5+', label: 'Years Experience' },
                         ].map((stat, index) => (
                             <div key={index} className="text-center glass-card p-6 rounded-xl hover-lift">
                                 <div className="text-4xl font-bold gradient-text mb-2">{stat.number}</div>
