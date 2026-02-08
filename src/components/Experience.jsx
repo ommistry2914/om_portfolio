@@ -333,7 +333,8 @@ const Experience = () => {
                                         </div>
                                     </div>
 
-                                    {/* Right Side Content (or empty space) */                                    <div className="flex-1 hidden lg:block">
+                                    {/* Right Side Content (or empty space) */}
+                                    <div className="flex-1 hidden lg:block">
                                         {exp.side === 'right' && (
                                             <div
                                                 className={`transition-all duration-700 ${visibleItems.includes(index)
