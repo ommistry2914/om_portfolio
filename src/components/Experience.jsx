@@ -333,8 +333,7 @@ const Experience = () => {
                                         </div>
                                     </div>
 
-                                    {/* Right Side Content (or empty space) */}
-                                    <div className="flex-1">
+                                    {/* Right Side Content (or empty space) */                                    <div className="flex-1 hidden lg:block">
                                         {exp.side === 'right' && (
                                             <div
                                                 className={`transition-all duration-700 ${visibleItems.includes(index)
@@ -424,64 +423,64 @@ const Experience = () => {
                                                 </div>
                                             </div>
                                         )}
+                                    </div>
 
-                                        {/* Mobile View - Show all cards stacked */}
-                                        <div className="lg:hidden">
-                                            <div className="glass-card p-8 rounded-3xl hover-lift group relative overflow-hidden">
-                                                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${exp.gradient}`}></div>
-                                                <div className="mb-6">
-                                                    <div className={`inline-flex w-16 h-16 rounded-2xl bg-gradient-to-br ${exp.gradient} items-center justify-center shadow-lg`}>
-                                                        <exp.icon className="w-8 h-8 text-white" />
+                                    {/* Mobile View - Show all cards stacked */}
+                                    <div className="lg:hidden">
+                                        <div className="glass-card p-8 rounded-3xl hover-lift group relative overflow-hidden">
+                                            <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${exp.gradient}`}></div>
+                                            <div className="mb-6">
+                                                <div className={`inline-flex w-16 h-16 rounded-2xl bg-gradient-to-br ${exp.gradient} items-center justify-center shadow-lg`}>
+                                                    <exp.icon className="w-8 h-8 text-white" />
+                                                </div>
+                                            </div>
+                                            <div className="mb-6">
+                                                <div className="flex items-start justify-between gap-4 mb-3">
+                                                    <div className="flex-1">
+                                                        <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
+                                                        <div className="flex items-center gap-2 text-foreground/80 mb-2">
+                                                            <Briefcase className="w-4 h-4" />
+                                                            <span className="font-semibold">{exp.company}</span>
+                                                        </div>
+                                                    </div>
+                                                    <span className={`px-4 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${exp.gradient} shadow-lg`}>
+                                                        {exp.type}
+                                                    </span>
+                                                </div>
+                                                <div className="flex flex-wrap gap-4 text-sm text-foreground/60">
+                                                    <div className="flex items-center gap-2">
+                                                        <Calendar className="w-4 h-4" />
+                                                        <span>{exp.period}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-2">
+                                                        <MapPin className="w-4 h-4" />
+                                                        <span>{exp.location}</span>
                                                     </div>
                                                 </div>
-                                                <div className="mb-6">
-                                                    <div className="flex items-start justify-between gap-4 mb-3">
-                                                        <div className="flex-1">
-                                                            <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
-                                                            <div className="flex items-center gap-2 text-foreground/80 mb-2">
-                                                                <Briefcase className="w-4 h-4" />
-                                                                <span className="font-semibold">{exp.company}</span>
-                                                            </div>
-                                                        </div>
-                                                        <span className={`px-4 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${exp.gradient} shadow-lg`}>
-                                                            {exp.type}
+                                            </div>
+                                            <p className="text-foreground/70 mb-6 leading-relaxed">{exp.description}</p>
+                                            <div className="mb-6">
+                                                <h4 className="font-semibold mb-3 text-foreground/90 flex items-center gap-2">
+                                                    <Award className="w-4 h-4 text-primary" />
+                                                    Key Achievements
+                                                </h4>
+                                                <ul className="space-y-2">
+                                                    {exp.achievements.map((achievement, achIndex) => (
+                                                        <li key={achIndex} className="flex items-start gap-3 text-foreground/70">
+                                                            <span className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.gradient} flex-shrink-0`}></span>
+                                                            <span className="flex-1">{achievement}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold mb-3 text-foreground/90 text-sm">Technologies Used</h4>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {exp.technologies.map((tech, techIndex) => (
+                                                        <span key={techIndex} className="text-xs px-3 py-1.5 bg-muted rounded-lg text-foreground/80">
+                                                            {tech}
                                                         </span>
-                                                    </div>
-                                                    <div className="flex flex-wrap gap-4 text-sm text-foreground/60">
-                                                        <div className="flex items-center gap-2">
-                                                            <Calendar className="w-4 h-4" />
-                                                            <span>{exp.period}</span>
-                                                        </div>
-                                                        <div className="flex items-center gap-2">
-                                                            <MapPin className="w-4 h-4" />
-                                                            <span>{exp.location}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p className="text-foreground/70 mb-6 leading-relaxed">{exp.description}</p>
-                                                <div className="mb-6">
-                                                    <h4 className="font-semibold mb-3 text-foreground/90 flex items-center gap-2">
-                                                        <Award className="w-4 h-4 text-primary" />
-                                                        Key Achievements
-                                                    </h4>
-                                                    <ul className="space-y-2">
-                                                        {exp.achievements.map((achievement, achIndex) => (
-                                                            <li key={achIndex} className="flex items-start gap-3 text-foreground/70">
-                                                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.gradient} flex-shrink-0`}></span>
-                                                                <span className="flex-1">{achievement}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-semibold mb-3 text-foreground/90 text-sm">Technologies Used</h4>
-                                                    <div className="flex flex-wrap gap-2">
-                                                        {exp.technologies.map((tech, techIndex) => (
-                                                            <span key={techIndex} className="text-xs px-3 py-1.5 bg-muted rounded-lg text-foreground/80">
-                                                                {tech}
-                                                            </span>
-                                                        ))}
-                                                    </div>
+                                                    ))}
                                                 </div>
                                             </div>
                                         </div>
