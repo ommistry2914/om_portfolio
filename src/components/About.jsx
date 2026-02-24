@@ -66,7 +66,7 @@ const About = () => {
                                     Hire Me
                                 </a>
                                 <a
-                                    href="/src/assets/resume/Om_Mistri_Resume.pdf"
+                                    href="/Om_Mistri_Resume.pdf"
                                     download="Om_Mistri_Resume.pdf"
                                     className="px-6 py-3 glass rounded-lg font-semibold hover:scale-105 transition-all"
                                 >
