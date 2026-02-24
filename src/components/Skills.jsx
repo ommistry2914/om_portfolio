@@ -94,8 +94,8 @@ const Skills = () => {
                                 key={index}
                                 onClick={() => setActiveCategory(index)}
                                 className={`group relative px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${activeCategory === index
-                                        ? 'text-white scale-105'
-                                        : 'glass text-foreground/70 hover:text-foreground hover:scale-105'
+                                    ? 'text-white scale-105'
+                                    : 'glass text-foreground/70 hover:text-foreground hover:scale-105'
                                     }`}
                             >
                                 {activeCategory === index && (
@@ -115,8 +115,8 @@ const Skills = () => {
                             <div
                                 key={categoryIndex}
                                 className={`transition-all duration-500 ${activeCategory === categoryIndex
-                                        ? 'opacity-100 scale-100'
-                                        : 'opacity-0 scale-95 absolute pointer-events-none'
+                                    ? 'opacity-100 scale-100'
+                                    : 'opacity-0 scale-95 absolute pointer-events-none'
                                     }`}
                             >
                                 <div className={`glass-card p-8 rounded-3xl bg-gradient-to-br ${category.bgGradient}`}>
@@ -164,40 +164,7 @@ const Skills = () => {
                         ))}
                     </div>
 
-                    {/* Stats Section */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div className="glass-card p-6 rounded-2xl text-center hover-lift group">
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Code2 className="w-8 h-8 text-white" />
-                            </div>
-                            <div className="text-3xl font-bold gradient-text mb-2">8+</div>
-                            <p className="text-foreground/70 text-sm">Frontend Technologies</p>
-                        </div>
 
-                        <div className="glass-card p-6 rounded-2xl text-center hover-lift group">
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Server className="w-8 h-8 text-white" />
-                            </div>
-                            <div className="text-3xl font-bold gradient-text mb-2">6+</div>
-                            <p className="text-foreground/70 text-sm">Backend Frameworks</p>
-                        </div>
-
-                        <div className="glass-card p-6 rounded-2xl text-center hover-lift group">
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Database className="w-8 h-8 text-white" />
-                            </div>
-                            <div className="text-3xl font-bold gradient-text mb-2">6+</div>
-                            <p className="text-foreground/70 text-sm">Database Systems</p>
-                        </div>
-
-                        <div className="glass-card p-6 rounded-2xl text-center hover-lift group">
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Wrench className="w-8 h-8 text-white" />
-                            </div>
-                            <div className="text-3xl font-bold gradient-text mb-2">10+</div>
-                            <p className="text-foreground/70 text-sm">Dev Tools & Platforms</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
