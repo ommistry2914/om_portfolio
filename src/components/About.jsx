@@ -1,110 +1,131 @@
-import { Code2, Rocket, Users, Award } from 'lucide-react';
+import { Code2, Database, Cloud, Award, Briefcase, GraduationCap } from 'lucide-react';
 
 const About = () => {
     const highlights = [
         {
+            icon: Briefcase,
+            title: 'Current Role',
+            description: 'Software Engineer at Alois Solutions',
+        },
+        {
             icon: Code2,
-            title: 'Software Engineer',
-            description: 'Currently at Alois Solutions building fintech apps',
+            title: 'Expertise',
+            description: 'Full-Stack Development & System Design',
         },
         {
-            icon: Rocket,
-            title: '500+ Problems Solved',
-            description: 'Active on LeetCode and GeeksforGeeks',
-        },
-        {
-            icon: Users,
-            title: 'Full Stack Developer',
-            description: 'MERN, Spring Boot, AWS & DevOps expertise',
+            icon: Database,
+            title: 'Specialization',
+            description: 'MERN Stack, Spring Boot, Cloud',
         },
         {
             icon: Award,
-            title: 'AWS Certified',
-            description: 'Cloud Computing Workshop from MSU',
+            title: 'Achievement',
+            description: '500+ Problems Solved on LeetCode',
         },
     ];
 
     return (
-        <section id="about" className="py-20 relative">
+        <section id="about" className="section-padding bg-muted/30">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
                     {/* Section Header */}
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16 animate-fade-in">
                         <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                            About <span className="gradient-text">Me</span>
+                            About Me
                         </h2>
-                        <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-                            Passionate about creating elegant solutions to complex problems
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            Passionate software engineer focused on building impactful solutions
                         </p>
                     </div>
 
                     {/* Main Content */}
-                    <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div className="grid lg:grid-cols-2 gap-12 mb-16">
                         {/* Left: Description */}
-                        <div className="space-y-6">
-                            <p className="text-foreground/80 text-lg leading-relaxed">
-                                I'm a <span className="text-primary font-semibold">Software Engineer</span> with a passion for
-                                building <span className="text-secondary font-semibold">scalable, user-centric applications</span> that
-                                solve real-world problems. I specialize in full-stack development, bringing ideas to life through
-                                clean, efficient code and modern development practices.
-                            </p>
-                            <p className="text-foreground/80 text-lg leading-relaxed">
-                                My tech stack includes <strong>React.js, Next.js, Node.js, Express.js, Spring Boot, FastAPI</strong>,
-                                and databases like <strong>MongoDB, PostgreSQL, and MySQL</strong>. I've implemented role-based access control,
-                                RESTful APIs, real-time features, and deployed applications on <strong>AWS (EC2, S3, CloudFront)</strong>.
-                            </p>
-                            <p className="text-foreground/80 text-lg leading-relaxed">
-                                I'm also a competitive programmer with <strong>500+ problems solved</strong> on LeetCode and GeeksforGeeks.
-                                Additionally, I have experience with <strong>Machine Learning</strong>, having developed ML models for
-                                predictive systems using Python, Scikit-learn, and Streamlit.
-                            </p>
-                            <div className="flex gap-4 pt-4">
-                                <a
-                                    href="#contact"
-                                    className="px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105"
-                                >
-                                    Hire Me
-                                </a>
-                                <a
-                                    href="/src/assets/resume/Om_Mistri_Resume.pdf"
-                                    download="Om_Mistri_Resume.pdf"
-                                    className="px-6 py-3 glass rounded-lg font-semibold hover:scale-105 transition-all"
-                                >
-                                    Download CV
-                                </a>
+                        <div className="space-y-6 animate-slide-in">
+                            <div>
+                                <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
+                                <p className="text-muted-foreground leading-relaxed">
+                                    I'm a <strong className="text-foreground">Software Engineer</strong> with expertise in building
+                                    scalable, user-centric applications. I specialize in full-stack development, bringing ideas to life
+                                    through clean, efficient code and modern development practices.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 className="text-xl font-semibold mb-3">Technical Expertise</h4>
+                                <p className="text-muted-foreground leading-relaxed">
+                                    My tech stack includes <strong className="text-foreground">React.js, Next.js, Node.js, Express.js, Spring Boot</strong>,
+                                    and databases like <strong className="text-foreground">MongoDB, PostgreSQL, and MySQL</strong>. I've implemented
+                                    role-based access control, RESTful APIs, real-time features, and deployed applications on
+                                    <strong className="text-foreground"> AWS (EC2, S3, CloudFront)</strong>.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 className="text-xl font-semibold mb-3">Beyond Development</h4>
+                                <p className="text-muted-foreground leading-relaxed">
+                                    I'm also a competitive programmer with <strong className="text-foreground">500+ problems solved</strong> on
+                                    LeetCode and GeeksforGeeks. Additionally, I have experience with <strong className="text-foreground">Machine Learning</strong>,
+                                    having developed ML models for predictive systems using Python, Scikit-learn, and Streamlit.
+                                </p>
                             </div>
                         </div>
 
-                        {/* Right: Highlights Grid */}
-                        <div className="grid grid-cols-2 gap-6">
+                        {/* Right: Highlights */}
+                        <div className="grid grid-cols-2 gap-4 animate-slide-up delay-200">
                             {highlights.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="glass-card p-6 rounded-xl hover-lift group"
+                                    className="card-professional p-6 hover-lift"
                                 >
-                                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                                         <item.icon className="w-6 h-6 text-primary" />
                                     </div>
-                                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                                    <p className="text-foreground/70 text-sm">{item.description}</p>
+                                    <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
+                                    <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Stats */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {[
-                            { number: '3+', label: 'Major Projects' },
-                            { number: '500+', label: 'Problems Solved' },
-                            { number: '10+', label: 'Technologies' },
-                            { number: '1.5+', label: 'Years Experience' },
-                        ].map((stat, index) => (
-                            <div key={index} className="text-center glass-card p-6 rounded-xl hover-lift">
-                                <div className="text-4xl font-bold gradient-text mb-2">{stat.number}</div>
-                                <div className="text-foreground/70">{stat.label}</div>
+                    {/* Education & Certifications */}
+                    <div className="grid md:grid-cols-2 gap-8 animate-fade-in delay-300">
+                        {/* Education */}
+                        <div className="card-professional p-6">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                    <GraduationCap className="w-5 h-5 text-primary" />
+                                </div>
+                                <h3 className="text-xl font-semibold">Education</h3>
                             </div>
-                        ))}
+                            <div className="space-y-4">
+                                <div>
+                                    <h4 className="font-semibold">B.Tech in Computer Engineering</h4>
+                                    <p className="text-sm text-muted-foreground">Maharaja Sayajirao University</p>
+                                    <p className="text-xs text-muted-foreground">2020 - 2024 • CGPA: 8.5/10</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Certifications */}
+                        <div className="card-professional p-6">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                    <Award className="w-5 h-5 text-primary" />
+                                </div>
+                                <h3 className="text-xl font-semibold">Certifications</h3>
+                            </div>
+                            <div className="space-y-3">
+                                <div>
+                                    <h4 className="font-semibold text-sm">AWS Cloud Computing</h4>
+                                    <p className="text-xs text-muted-foreground">Workshop from MSU</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-sm">Full Stack Development</h4>
+                                    <p className="text-xs text-muted-foreground">MERN Stack Specialization</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

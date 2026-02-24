@@ -1,64 +1,139 @@
-import { ArrowDown, Sparkles } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download, MapPin } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float delay-300"></div>
-                <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float delay-500"></div>
-            </div>
+        <section id="home" className="min-h-screen flex items-center relative bg-background pt-20">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Content */}
+                        <div className="space-y-8 animate-slide-in">
+                            {/* Professional Badge */}
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-muted rounded-full text-sm font-medium text-muted-foreground">
+                                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                                Available for new opportunities
+                            </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="max-w-5xl mx-auto text-center">
-                    {/* Badge */}
-                    <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-8 animate-slide-up">
-                        <Sparkles className="w-4 h-4 text-primary" />
-                        <span className="text-sm text-foreground/80">Available for Freelance & Full-time</span>
-                    </div>
+                            {/* Main Heading */}
+                            <div className="space-y-4">
+                                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+                                    Hi, I'm <span className="text-gradient">Om Mistri</span>
+                                </h1>
+                                <h2 className="text-2xl sm:text-3xl font-semibold text-muted-foreground">
+                                    Software Engineer
+                                </h2>
+                            </div>
 
-                    {/* Main Heading */}
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up delay-100">
-                        Hi, I'm <span className="gradient-text">Om Mistri</span>
-                    </h1>
+                            {/* Description */}
+                            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+                                Specialized in building scalable full-stack applications with modern technologies.
+                                Experienced in <strong className="text-foreground">MERN stack</strong>, <strong className="text-foreground">Spring Boot</strong>,
+                                and <strong className="text-foreground">cloud technologies</strong>.
+                            </p>
 
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground/90 mb-6 animate-slide-up delay-200">
-                        Software Engineer
-                    </h2>
+                            {/* CTA Buttons */}
+                            <div className="flex flex-wrap gap-4">
+                                <a
+                                    href="#projects"
+                                    className="btn-primary"
+                                >
+                                    View Projects
+                                    <ArrowRight className="w-4 h-4" />
+                                </a>
+                                <a
+                                    href="#contact"
+                                    className="btn-secondary"
+                                >
+                                    <Mail className="w-4 h-4" />
+                                    Get In Touch
+                                </a>
+                            </div>
 
-                    {/* Description */}
-                    <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up delay-300">
-                        Crafting scalable full-stack applications with expertise in{' '}
-                        <span className="text-primary font-semibold">MERN stack</span>,{' '}
-                        <span className="text-secondary font-semibold">Spring Boot</span>, and{' '}
-                        <span className="text-accent font-semibold">cloud technologies</span>. Passionate about solving complex problems
-                        and building robust solutions with clean, efficient code.
-                    </p>
+                            {/* Social Links */}
+                            <div className="flex items-center gap-4 pt-4">
+                                <a
+                                    href="https://github.com/ommistry2914"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 flex items-center justify-center border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                                    aria-label="GitHub"
+                                >
+                                    <Github className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href="https://linkedin.com/in/om-mistri"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 flex items-center justify-center border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                                    aria-label="LinkedIn"
+                                >
+                                    <Linkedin className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href="mailto:ommistry2914@gmail.com"
+                                    className="w-10 h-10 flex items-center justify-center border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                                    aria-label="Email"
+                                >
+                                    <Mail className="w-5 h-5" />
+                                </a>
+                            </div>
+                        </div>
 
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 animate-slide-up delay-400">
-                        <a
-                            href="#projects"
-                            className="group relative px-8 py-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-lg font-semibold text-white overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
-                        >
-                            <span className="relative z-10">View My Work</span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-accent via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </a>
-                        <a
-                            href="#contact"
-                            className="px-8 py-4 glass rounded-lg font-semibold hover:scale-105 transition-all hover:shadow-xl"
-                        >
-                            Get In Touch
-                        </a>
-                    </div>
+                        {/* Right Content - Professional Info Card */}
+                        <div className="animate-slide-up delay-200">
+                            <div className="card-professional p-8 space-y-6">
+                                {/* Quick Info */}
+                                <div className="space-y-4">
+                                    <h3 className="text-xl font-semibold">Quick Info</h3>
 
-                    {/* Scroll Indicator */}
-                    <div className="flex justify-center animate-bounce">
-                        <a href="#about" className="flex flex-col items-center gap-2 text-foreground/50 hover:text-foreground transition-colors">
-                            <span className="text-sm">Scroll Down</span>
-                            <ArrowDown className="w-5 h-5" />
-                        </a>
+                                    <div className="space-y-3">
+                                        <div className="flex items-start gap-3">
+                                            <MapPin className="w-5 h-5 text-primary mt-0.5" />
+                                            <div>
+                                                <p className="font-medium text-foreground">Location</p>
+                                                <p className="text-sm text-muted-foreground">Vadodara, India</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3">
+                                            <Mail className="w-5 h-5 text-primary mt-0.5" />
+                                            <div>
+                                                <p className="font-medium text-foreground">Email</p>
+                                                <a href="mailto:ommistry2914@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                                    ommistry2914@gmail.com
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Stats */}
+                                <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
+                                    <div className="text-center">
+                                        <div className="text-2xl font-bold text-primary">500+</div>
+                                        <div className="text-xs text-muted-foreground">Problems Solved</div>
+                                    </div>
+                                    <div className="text-center">
+                                        <div className="text-2xl font-bold text-primary">3+</div>
+                                        <div className="text-xs text-muted-foreground">Projects</div>
+                                    </div>
+                                    <div className="text-center">
+                                        <div className="text-2xl font-bold text-primary">1.5+</div>
+                                        <div className="text-xs text-muted-foreground">Years Exp</div>
+                                    </div>
+                                </div>
+
+                                {/* Download Resume */}
+                                <a
+                                    href="/src/assets/resume/Om_Mistri_Resume.pdf"
+                                    download="Om_Mistri_Resume.pdf"
+                                    className="w-full btn-primary"
+                                >
+                                    <Download className="w-4 h-4" />
+                                    Download Resume
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
